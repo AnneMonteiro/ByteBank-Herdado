@@ -9,7 +9,8 @@ public class TestaGerente {
 
         System.out.println("Nome GERENTE: "+g1.getNome());
         System.out.println("CPF: " +g1.getCpf());
-        System.out.println("Salário: "+g1.getSalario(5000.00));
+        System.out.println("Salário: "+g1.getSalario());
+        System.out.println("Bonificação: "+g1.getBonificacao());
 
         g1.setSenha(44455);
         boolean autenticou = g1.autentica(44455);

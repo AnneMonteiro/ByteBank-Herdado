@@ -7,9 +7,12 @@ public class Gerente extends Funcionario {
 
 
     public int getSenha() {
+
         return senha;
     }
+
     public void setSenha(int senha) {
+
         this.senha = senha;
     }
 
@@ -23,8 +26,9 @@ public class Gerente extends Funcionario {
         }
     }
 
-    //public double getBonificacao(){
-    //    return this.Salario();
-    //}
+    public double getBonificacao(){
+        System.out.println("Chamando metodo de bonificação GERENTE");
+        return super.getBonificacao() + super.getSalario();
+    }
 
 }
