@@ -1,6 +1,7 @@
 package Aplication;
+//nao pode instaciar objetos dessa classe, pois ela é abstrata
 
-public class Funcionario {
+public abstract class Funcionario {
 
     private String nome;
     private String cpf;
@@ -12,11 +13,9 @@ public class Funcionario {
 
     }
 
+ //metodo sem corpo, nao ha implementacao, precisar implementar nos filhos
+    public abstract double getBonificacao();
 
-    public double getBonificacao(){
-
-        return this.salario * 0.05;
-    }
 
     public String getNome() {
         return nome;
