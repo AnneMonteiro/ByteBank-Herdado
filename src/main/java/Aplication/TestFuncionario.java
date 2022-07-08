@@ -4,6 +4,8 @@ public class TestFuncionario {
 
     public static void main(String[] args) {
 
+        Cliente cliente = new Cliente();
+
     Funcionario anne = new Gerente();
     anne.setNome("Anne");
     anne.setCpf("123.456.789-01");

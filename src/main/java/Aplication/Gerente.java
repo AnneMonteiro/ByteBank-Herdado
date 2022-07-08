@@ -1,29 +1,15 @@
 package Aplication;
 
-//Gerente e um funcionario, ele herda da classe Funcionario os atributos e comportamentos
+//Gerente e um funcionario, ele herda da classe Funcionario os atributos e comportamentos,
+// assina o contrato autenticavel, eh um autenticavel
 
 
-public class Gerente extends Funcionario {
+public class Gerente extends Funcionario implements Autenticavel {
 
+    private AutenticacaoUtil autenticador;
 
-    public int getSenha() {
-
-        return senha;
-    }
-
-    public void setSenha(int senha) {
-
-        this.senha = senha;
-    }
-
-    private int senha;
-
-    public boolean autentica(int senha) {
-        if (senha == senha) {
-            return true;
-        } else {
-            return false;
-        }
+    public Gerente(){
+        this.autenticador = new AutenticacaoUtil();
     }
 
     public double getBonificacao(){
@@ -31,4 +17,13 @@ public class Gerente extends Funcionario {
         return super.getSalario();
     }
 
+    @Override
+    public void setSenha(int senha) {
+        this.autenticador.setSenha(senha);
+    }
+
+    @Override
+    public boolean autentica(int senha) {
+        return this.autenticador.autentica(senha);
+        }
 }
